@@ -1,0 +1,59 @@
+{
+  "server": "https://localhost:9200",
+  "theme": "https://localhost:9200/themes/owncloud/theme.json",
+  "openIdConnect": {
+    "metadata_url": "https://localhost:9200/.well-known/openid-configuration",
+    "authority": "https://localhost:9200",
+    "client_id": "web",
+    "response_type": "code",
+    "scope": "openid profile email"
+  },
+  "apps": [
+    "files",
+    "search",
+    "text-editor",
+    "pdf-viewer",
+    "external",
+    "admin-settings"
+  ],
+  "external_apps": [
+    {
+      "id": "preview",
+      "path": "web-app-preview",
+      "config": {
+        "mimeTypes": [
+          "image/tiff",
+          "image/bmp",
+          "image/x-ms-bmp"
+        ]
+      }
+    },
+    {
+      "id": "preview",
+      "path": "/sample/simple/ui/dist/simple.umd.cjs"
+    }
+  ],
+  "options": {
+    "previewFileMimeTypes": [
+      "image/gif",
+      "image/png",
+      "image/jpeg",
+      "text/plain",
+      "image/tiff",
+      "image/bmp",
+      "image/x-ms-bmp"
+    ],
+    "sharingRecipientsPerPage": 200,
+    "sidebar": {
+      "shares": {
+        "showAllOnLoad": false
+      }
+    },
+    "routing": {
+      "idBased": true
+    },
+    "contextHelpersReadMore": true,
+    "openLinksWithDefaultApp": true,
+    "tokenStorageLocal": true
+  }
+}
