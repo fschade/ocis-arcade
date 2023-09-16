@@ -18,7 +18,7 @@ import (
 //go:embed ui/dist/*
 var assets embed.FS
 
-const serviceName = "simple"
+const serviceName = "arcade"
 const httpRoot = "/sample/" + serviceName
 
 func main() {

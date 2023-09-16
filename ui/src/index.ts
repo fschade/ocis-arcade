@@ -1,28 +1,36 @@
 import App from './App.vue'
+import { AppWrapperRoute } from 'web-pkg/src/components/AppTemplates/AppWrapperRoute'
+
+// just a dummy function to trick gettext tools
+function $gettext(msg) {
+	return msg
+}
 
 const routes = [
-    {
-        path: '/:driveAliasAndItem(.*)?',
-        component: App,
-        name: 'oces',
-        meta: {
-            authContext: 'hybrid',
-            title: 'ES',
-            patchCleanPath: true
-        }
-    }
+	{
+		path: '/:driveAliasAndItem(.*)?',
+		component: AppWrapperRoute(App, {
+			applicationId: 'arcade',
+		}),
+		name: 'arcade',
+		meta: {
+			authContext: 'hybrid',
+			title: $gettext('Arcade'),
+			patchCleanPath: true
+		}
+	}
 ]
 
 const appInfo = {
-    name: 'ES',
-    id: 'oces',
-    icon: 'bear-smile',
+    name: $gettext('Arcade'),
+    id: 'arcade',
+    icon: 'game',
     iconFillType: 'fill',
     iconColor: 'rgb(255,255,0)',
     extensions: [
         {
-            extension: 'oces',
-            routeName: 'oces'
+            extension: 'nes',
+            routeName: 'arcade'
         }
     ]
 }

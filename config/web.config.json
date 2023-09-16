@@ -30,7 +30,7 @@
     },
     {
       "id": "preview",
-      "path": "/sample/simple/ui/dist/simple.umd.cjs"
+      "path": "/sample/arcade/ui/dist/arcade.umd.cjs"
     }
   ],
   "options": {
