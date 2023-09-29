@@ -4,26 +4,26 @@
 	"version": "0.0.0",
 	"type": "module",
 	"scripts": {
-		"build": "vite build",
-		"build:w": "pnpm build --watch"
+		"lint": "eslint src --ext vue --ext js --ext ts --color",
+		"build": "pnpm vite build",
+		"build:w": "pnpm vite build --watch --mode development"
 	},
 	"dependencies": {
-		"vue3-gettext": "^2.3.3",
-		"vue": "^3.3.4",
-		"web-pkg": "file:../../../owncloud/web/packages/web-pkg",
-		"web-client": "file:../../../owncloud/web/packages/web-client",
-		"v-calendar": "github:dschmidt/v-calendar#3ce6e3b8afd5491cb53ee811281d5fa8a45b044d",
-		"design-system": "file:../../../owncloud/web/packages/design-system",
-		"sass": "^1.62.1",
-		"vite-plugin-css-injected-by-js": "^3.3.0",
+		"@ownclouders/eslint-config": "0.0.1",
+		"@ownclouders/extension-sdk": "0.0.5-alpha.1",
+		"@ownclouders/prettier-config": "0.0.1",
+		"@ownclouders/tsconfig": "0.0.5-alpha.1",
+		"@ownclouders/web-pkg": "0.0.5-alpha.2",
 		"nes-vue": "^1.6.10"
 	},
 	"devDependencies": {
-		"vite-plugin-treat-umd-as-commonjs": "0.1.3",
-		"rollup-plugin-node-polyfills": "0.2.1",
-		"@vitejs/plugin-vue": "4.2.3",
 		"typescript": "5.0.3",
 		"vite": "4.3.5",
-		"vue-tsc": "1.8.10"
+		"vue": "3.3.4"
+	},
+	"pnpm": {
+		"peerDependencyRules": {
+			"ignoreMissing": ["design-system*"]
+		}
 	}
 }
